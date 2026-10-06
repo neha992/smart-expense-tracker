@@ -7,6 +7,7 @@ const authRoutes = require('./routes/authRoutes');
 const transactionRoutes = require('./routes/transactionRoutes');
 const analyticsRoutes = require('./routes/analyticsRoutes');
 const insightRoutes = require('./routes/insightRoutes');
+const receiptRoutes = require('./routes/receiptRoutes');
 
 const app = express();
 
@@ -54,8 +55,10 @@ app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/insights', insightRoutes);
+app.use('/api/receipts', receiptRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
 
 module.exports = app;
+
