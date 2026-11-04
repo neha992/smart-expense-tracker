@@ -49,6 +49,27 @@ Smart Expense Tracker combines transaction management, receipt scanning, financi
 * User-specific transaction access and data isolation.
 
 ---
+## 📸 Application Screenshots
+
+### Dashboard
+Overview of income, expenses, balance and recent financial activity.
+
+![Dashboard](screenshots/dashboard.png)
+
+### Transaction Management
+View, add, edit and manage financial transactions.
+
+![Transactions](screenshots/transactions.png)
+
+### Financial Analytics
+Visualize spending patterns and analyze expenses by category.
+
+![Analytics](screenshots/analytics.png)
+
+### Receipt Scanner & OCR
+Capture or upload receipts and automatically extract transaction details.
+
+![Receipt Scanner](screenshots/receipt-scanner.png)
 
 ## 🛠️ Technology Stack
 
