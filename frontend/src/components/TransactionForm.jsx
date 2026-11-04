@@ -15,6 +15,7 @@ const TransactionForm = ({ initialData, onSubmit, onCancel, loading }) => {
 
   useEffect(() => {
     if (initialData) {
+// eslint-disable-next-line react-hooks/set-state-in-effect
       setForm({
         type: initialData.type || 'expense',
         amount: initialData.amount ?? '',

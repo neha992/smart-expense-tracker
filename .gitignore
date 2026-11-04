@@ -1,0 +1,48 @@
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+!.**/.env.example
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+dist-ssr/
+
+# Logs
+*.log
+
+# Temporary and backup files
+*.bak
+*.backup
+*.tmp
+*.pre-save-backup
+
+# Development backup folders
+backend/backup-*/
+backend/receipt-backup-*/
+frontend/lint-before-*/
+frontend/lint-repair-backup-*/
+frontend/src-backup-*/
+
+# OCR testing artifacts
+backend/receipt-*.png
+backend/test-*.js
+backend/test-*.webp
+
+# Development scripts and audit files
+backend/apply-batch1.js
+backend/fix-*.js
+backend/receipt-audit.txt
+frontend/*.ps1
+frontend/lint-fix-source.txt
+
+# Additional OCR development backups
+backend/eng.traineddata
+backend/src/services/*.before-*
+backend/src/services/*.batch1-original.js
+backend/src/services/*.pre-final-review-backup
+backend/src/services/*.warning-backup

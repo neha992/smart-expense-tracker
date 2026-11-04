@@ -52,7 +52,7 @@ export const getErrorMessage = (error) => {
 /**
  * Categories allowed by the backend
  */
-export const CATEGORIES = ['Food', 'Travel', 'Shopping', 'Bills', 'Education', 'Salary', 'Other'];
+export const CATEGORIES = ['Food', 'Travel', 'Shopping', 'Bills', 'Education', 'Healthcare', 'Salary', 'Other'];
 export const TYPES = ['income', 'expense'];
 
 /**
@@ -64,6 +64,7 @@ export const CATEGORY_COLORS = {
   Shopping: '#a855f7',
   Bills: '#ef4444',
   Education: '#14b8a6',
+  Healthcare: '#ec4899',
   Salary: '#22c55e',
   Other: '#6b7280',
 };

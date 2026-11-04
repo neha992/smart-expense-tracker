@@ -2,9 +2,10 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  // NOTE: Do NOT set a global Content-Type default here.
+  // Axios sets 'application/json' automatically for plain-object bodies.
+  // For FormData bodies (receipt upload), Axios must set the multipart/form-data
+  // boundary itself. A hard-coded global default overrides that and breaks multer.
 });
 
 // Request interceptor: attach JWT token

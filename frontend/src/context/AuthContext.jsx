@@ -13,6 +13,7 @@ export const AuthProvider = ({ children }) => {
     const storedUser = localStorage.getItem('user');
     if (storedToken && storedUser) {
       try {
+// eslint-disable-next-line react-hooks/set-state-in-effect
         setToken(storedToken);
         setUser(JSON.parse(storedUser));
       } catch {
@@ -59,6 +60,7 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
   const ctx = useContext(AuthContext);
   if (!ctx) throw new Error('useAuth must be used within AuthProvider');

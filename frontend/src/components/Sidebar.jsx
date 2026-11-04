@@ -5,6 +5,7 @@ import {
   ArrowLeftRight,
   BarChart2,
   Lightbulb,
+  ScanLine,
   LogOut,
   TrendingUp,
 } from 'lucide-react';
@@ -14,6 +15,7 @@ const navItems = [
   { to: '/transactions', label: 'Transactions', Icon: ArrowLeftRight },
   { to: '/analytics', label: 'Analytics', Icon: BarChart2 },
   { to: '/insights', label: 'Smart Insights', Icon: Lightbulb },
+  { to: '/receipt-scanner', label: 'Scan Receipt', Icon: ScanLine },
 ];
 
 const Sidebar = ({ onClose }) => {

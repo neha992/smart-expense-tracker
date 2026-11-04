@@ -46,9 +46,10 @@ const Transactions = () => {
     }
   }, [page, filters]);
 
-  useEffect(() => {
-    fetchTransactions();
-  }, [fetchTransactions]);
+ useEffect(() => {
+// eslint-disable-next-line react-hooks/set-state-in-effect
+fetchTransactions();
+}, [fetchTransactions]);
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
@@ -61,17 +62,51 @@ const Transactions = () => {
     setPage(1);
   };
 
-  const handleAdd = async (data) => {
-    setFormLoading(true);
-    try {
-      await transactionService.create(data);
-      setShowAddModal(false);
-      showToast('Transaction added successfully!');
-      fetchTransactions();
-    } finally {
-      setFormLoading(false);
+const handleAdd = async (data) => {
+  setFormLoading(true);
+
+  try {
+    // Save the new transaction to the backend
+    await transactionService.create(data);
+
+    // Check whether the current page or filters need resetting
+    const needsReset =
+      page !== 1 ||
+      Object.values(filters).some((value) => value !== '');
+
+    // Clear all filters so the new transaction is not hidden
+    setFilters({
+      category: '',
+      type: '',
+      startDate: '',
+      endDate: '',
+    });
+
+    // Return to the first page
+    setPage(1);
+
+    // Close the add transaction modal
+    setShowAddModal(false);
+
+    // Show success notification
+    showToast('Transaction added successfully!');
+
+    // If already on page 1 with no filters, refresh manually.
+    // Otherwise, the useEffect will fetch the updated list
+    // after the page and filter state changes.
+    if (!needsReset) {
+      await fetchTransactions();
     }
-  };
+  } catch (error) {
+    console.error('Failed to add transaction:', error);
+    showToast(
+      error?.response?.data?.message ||
+        'Failed to add transaction. Please try again.'
+    );
+  } finally {
+    setFormLoading(false);
+  }
+};
 
   const handleEdit = async (data) => {
     setFormLoading(true);

@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import Transactions from './pages/Transactions';
 import Analytics from './pages/Analytics';
 import SmartInsights from './pages/SmartInsights';
+import ReceiptScanner from './pages/ReceiptScanner';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/insights" element={<SmartInsights />} />
+            <Route path="/receipt-scanner" element={<ReceiptScanner />} />
           </Route>
 
           {/* Redirect root to dashboard */}
